@@ -20,8 +20,13 @@ export const todoSlice = createSlice({
                 return { items: array }
             }
         },
-        cleartodo: () => {
-            return { todo: [] }
+        clearTodo: (state, action) => {
+            // return { todo: [] }
+            console.log(action)
+            let array = [...state.items]
+            let index = action.payload
+                array.splice(index, array.length)
+                return { items: array }
         }
     }
 })
